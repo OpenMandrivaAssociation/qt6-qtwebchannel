@@ -1,5 +1,7 @@
+%define beta beta2
+
 Name:		qt6-qtwebchannel
-Version:	6.3.1
+Version:	6.4.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -35,6 +37,10 @@ License:	LGPLv3/GPLv3/GPLv2
 
 %description
 Qt %{major} Web Channel module
+
+%define extra_files_WebChannel \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/*webchannel*.cmake \
+%{_qtdir}/qml/QtWebChannel
 
 %qt6libs WebChannel
 
