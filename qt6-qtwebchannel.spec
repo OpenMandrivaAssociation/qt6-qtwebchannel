@@ -1,4 +1,4 @@
-%define beta beta4
+%define beta rc
 
 Name:		qt6-qtwebchannel
 Version:	6.4.0
@@ -49,6 +49,16 @@ Qt %{major} Web Channel module
 %{_qtdir}/qml/QtWebChannel
 
 %qt6libs WebChannel
+
+%package examples
+Summary:	Examples demonstrating the use of QtWebChannel
+Group:		Development/C++ and C
+
+%description examples
+Examples demonstrating the use of QtWebChannel
+
+%files examples
+%{_libdir}/qt6/examples/webchannel
 
 %prep
 %autosetup -p1 -n qtwebchannel%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
