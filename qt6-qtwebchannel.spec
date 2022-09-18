@@ -29,6 +29,7 @@ BuildRequires:	cmake(Qt6Qml)
 BuildRequires:	cmake(Qt6QmlModels)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6QuickTest)
+BuildRequires:	cmake(Qt6WebSockets)
 BuildRequires:	qt6-qtdeclarative
 BuildRequires:	qt6-cmake
 BuildRequires:	pkgconfig(gl)
