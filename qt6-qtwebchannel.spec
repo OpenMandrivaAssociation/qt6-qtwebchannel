@@ -1,7 +1,7 @@
 #define beta rc
 
 Name:		qt6-qtwebchannel
-Version:	6.4.0
+Version:	6.4.1
 Release:	%{?beta:0.%{beta}.1}%{?snapshot:1.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -51,15 +51,15 @@ Qt %{major} Web Channel module
 
 %qt6libs WebChannel
 
-%package examples
-Summary:	Examples demonstrating the use of QtWebChannel
-Group:		Development/C++ and C
-
-%description examples
-Examples demonstrating the use of QtWebChannel
-
-%files examples
-%{_libdir}/qt6/examples/webchannel
+#%package examples
+#Summary:	Examples demonstrating the use of QtWebChannel
+#Group:		Development/C++ and C
+#
+#%description examples
+#Examples demonstrating the use of QtWebChannel
+#
+#%files examples
+#%{_libdir}/qt6/examples/webchannel
 
 %prep
 %autosetup -p1 -n qtwebchannel%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
