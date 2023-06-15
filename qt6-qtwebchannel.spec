@@ -1,8 +1,8 @@
-#define beta rc
+%define beta beta1
 
 Name:		qt6-qtwebchannel
-Version:	6.5.1
-Release:	%{?beta:0.%{beta}.1}%{?snapshot:0.%{snapshot}.}1
+Version:	6.6.0
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtwebchannel-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -46,10 +46,12 @@ License:	LGPLv3/GPLv3/GPLv2
 Qt %{major} Web Channel module
 
 %define extra_files_WebChannel \
-%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/*webchannel*.cmake \
 %{_qtdir}/qml/QtWebChannel
 
-%qt6libs WebChannel
+%define extra_devel_files_WebChannelQuick \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuick*
+
+%qt6libs WebChannel WebChannelQuick
 
 %package examples
 Summary:	Examples demonstrating the use of QtWebChannel
