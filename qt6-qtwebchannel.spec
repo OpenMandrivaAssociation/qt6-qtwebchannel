@@ -1,7 +1,7 @@
 #define beta rc2
 
 Name:		qt6-qtwebchannel
-Version:	6.8.0
+Version:	6.8.1
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -47,6 +47,9 @@ Qt %{major} Web Channel module
 
 %define extra_files_WebChannel \
 %{_qtdir}/qml/QtWebChannel
+
+%define extra_devel_files_WebChannel \
+%{_qtdir}/sbom/*
 
 %define extra_devel_files_WebChannelQuick \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6WebChannelQuick*
